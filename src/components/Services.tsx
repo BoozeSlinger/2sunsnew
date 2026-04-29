@@ -57,17 +57,24 @@ export default function Services() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      ScrollTrigger.batch(".service-card", {
-        onEnter: (elements) => {
-          gsap.from(elements, {
-            clipPath: "inset(0 100% 0 0)",
-            opacity: 0,
+      const cards = gsap.utils.toArray<HTMLElement>(".service-card");
+
+      cards.forEach((card) => {
+        gsap.fromTo(
+          card,
+          { clipPath: "inset(0 100% 0 0)", opacity: 0 },
+          {
+            clipPath: "inset(0 0% 0 0)",
+            opacity: 1,
             duration: 1,
-            stagger: 0.15,
             ease: "expo.out",
-          });
-        },
-        start: "top 85%",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 88%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
       });
     }, sectionRef);
 

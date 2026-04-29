@@ -70,9 +70,10 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="why-us" className="py-24 bg-[#0A1628] text-white relative overflow-hidden">
+    <section ref={sectionRef} id="why-us" className="py-28 bg-[#0A1628] text-white relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[#5AC83A]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-[#5AC83A]/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#5AC83A]/20 to-transparent" />
       
       <div className="container relative z-10">
         <SectionHeader 
@@ -81,32 +82,37 @@ export default function WhyChooseUs() {
           dark
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {highlights.map((item) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {highlights.map((item, i) => (
             <div
               key={item.title}
-              className={`highlight-card group relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 lg:p-10 transition-all duration-500 hover:-translate-y-3 hover:bg-white/[0.06] hover:border-white/20 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] ${item.glow}`}
+              className={`highlight-card group relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 lg:p-12 transition-all duration-500 hover:-translate-y-3 hover:bg-white/[0.06] hover:border-[#5AC83A]/25 hover:shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)] ${item.glow} overflow-hidden`}
             >
-              {/* Left Accent Bar */}
-              <div className={`absolute left-0 top-12 bottom-12 w-1.5 rounded-r-full bg-gradient-to-b ${item.accent} opacity-20 group-hover:opacity-100 transition-all duration-500`} />
-              
-              {/* Icon Container with Circular Gradient Background */}
-              <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-10 relative group-hover:scale-110 transition-transform duration-500`}>
-                <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${item.accent} opacity-10 group-hover:opacity-20 blur-md transition-opacity duration-500`} />
-                <div className={`absolute inset-0 rounded-full border border-white/5 group-hover:border-[#5AC83A]/30 transition-colors duration-500`} />
-                <item.icon className={`w-10 h-10 ${item.iconColor} relative z-10 drop-shadow-[0_0_15px_rgba(90,200,58,0.5)]`} />
+              {/* Top accent line */}
+              <div className={`absolute top-0 left-10 right-10 h-0.5 bg-gradient-to-r ${item.accent} opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-b-full`} />
+
+              {/* Number badge */}
+              <div className="absolute top-8 right-8 text-[4rem] font-black text-white/[0.04] group-hover:text-white/[0.07] leading-none transition-colors duration-500 select-none">
+                {String(i + 1).padStart(2, "0")}
               </div>
               
-              <h4 className="text-2xl font-black mb-4 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-500">
+              {/* Icon Container */}
+              <div className="w-24 h-24 rounded-2xl flex items-center justify-center mb-10 relative group-hover:scale-110 transition-transform duration-500">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.accent} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
+                <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-[#5AC83A]/40 transition-colors duration-500" />
+                <item.icon className={`w-12 h-12 ${item.iconColor} relative z-10 drop-shadow-[0_0_20px_rgba(90,200,58,0.5)]`} />
+              </div>
+              
+              <h4 className="text-2xl lg:text-3xl font-black mb-5 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#5AC83A] group-hover:to-[#56AAE2] transition-all duration-500">
                 {item.title}
               </h4>
               
-              <p className="text-white/50 leading-relaxed font-medium text-base group-hover:text-white/80 transition-colors duration-500">
+              <p className="text-white/55 leading-relaxed font-medium text-lg group-hover:text-white/80 transition-colors duration-500">
                 {item.body}
               </p>
-              
-              {/* Corner Glow Effect */}
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${item.accent} opacity-0 group-hover:opacity-5 blur-3xl rounded-full transition-opacity duration-700`} />
+
+              {/* Bottom corner glow */}
+              <div className={`absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl ${item.accent} opacity-0 group-hover:opacity-5 blur-3xl rounded-full transition-opacity duration-700`} />
             </div>
           ))}
         </div>
