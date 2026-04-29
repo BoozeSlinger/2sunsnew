@@ -114,7 +114,7 @@ export default function Hero() {
             videoFailed ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
           style={{
-            objectPosition: "85% center",
+            objectPosition: "right center",
           }}
         >
           {/* WebM/VP9 — smaller, preferred by Chrome, Android, Firefox */}
@@ -131,7 +131,7 @@ export default function Hero() {
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "85% center" }}
+            style={{ objectPosition: "right center" }}
           />
         )}
 
