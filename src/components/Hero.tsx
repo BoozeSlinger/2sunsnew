@@ -95,19 +95,27 @@ export default function Hero() {
       {/* ── Background: video with poster fallback ── */}
       <div className="absolute inset-0 z-0">
         {/* FIX 2: videoFailed hides the video and uses poster as bg via CSS class */}
+        {/*
+          object-position:
+            mobile  → 85% center  (shifts right so the character on the right
+                                   edge of the 16:9 frame stays in view on
+                                   narrow portrait screens ~390-430 px)
+            md+     → center center (full-width desktop shows the whole frame)
+        */}
         <video
           ref={videoRef}
           muted
           playsInline
           autoPlay
           loop
-          // FIX 1: poster shown by iOS before autoplay kicks in
           poster="/hero-poster.jpg"
-          // FIX 1: preload="auto" gives the browser the best autoplay chance
           preload="auto"
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
             videoFailed ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
+          style={{
+            objectPosition: "85% center",
+          }}
         >
           <source src="/2sunshero.mp4" type="video/mp4" />
         </video>
@@ -119,7 +127,8 @@ export default function Hero() {
             src="/hero-poster.jpg"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "85% center" }}
           />
         )}
 
