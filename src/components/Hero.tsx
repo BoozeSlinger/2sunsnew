@@ -75,19 +75,16 @@ export default function Hero() {
       {/* ── Animated WebP background ── */}
       <div className="absolute inset-0 z-0">
         {/*
-          Animated WebP plays automatically in all modern browsers
-          (Chrome, Safari, Firefox, Edge, Android, iOS Safari 14+).
-          No autoplay restrictions — browsers treat <img> animations
-          like GIFs. object-position: right center keeps the character
-          anchored in view on narrow mobile portrait screens.
+          Mobile  → object-contain: full 16:9 image fits in viewport, character
+                    and logo both visible. Dark bg-[#0A1628] fills letterbox bars.
+          Desktop → object-cover: full-bleed, image fills viewport width.
         */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/2sunshero.webp"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "right center" }}
+          className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
         />
 
         {/* Dark gradient overlay — lightens top, darkens bottom for text contrast */}
