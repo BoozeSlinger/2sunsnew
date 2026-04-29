@@ -13,46 +13,26 @@ const HERO_LINES = ["Cleaning", "with the power", "of Two Suns"];
 
 export default function Hero() {
   const [showContent, setShowContent] = useState(false);
-  // videoFailed = true when autoplay is blocked; hero falls back to poster
-  const [videoFailed, setVideoFailed] = useState(false);
 
-  const videoRef = useRef<HTMLVideoElement>(null);
   const linesRef = useRef<HTMLSpanElement[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // ─── FIX 4 & 1: Mount-gated GSAP text reveal (not tied to video canplay) ───
+  // Show hero content after the WebP animation plays once (~8 s)
   useEffect(() => {
-    // FIX 4: respect prefers-reduced-motion
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    // FIX 1: attempt autoplay; fall back to poster on rejection
-    const video = videoRef.current;
-    if (video) {
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay blocked (common on some Android browsers without interaction)
-          setVideoFailed(true);
-        });
-      }
-    }
-
-    // Show hero content after 6 s (video plays once) + 2 s buffer
-    // On reduced-motion we show content immediately with no animation
+    // On reduced-motion show content immediately
     const delay = mq.matches ? 0 : 6000;
     const timer = setTimeout(() => setShowContent(true), delay);
-
     return () => clearTimeout(timer);
   }, []);
 
-  // ─── FIX 4: GSAP text flip-in (runs on mount, not on canplay) ────────────
+  // GSAP text flip-in — fires on mount state, not tied to any media event
   useEffect(() => {
     if (!showContent || linesRef.current.length === 0) return;
 
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) {
-      // Skip animation — instantly show all lines
       gsap.set(linesRef.current, { rotateX: 0 });
       return;
     }
@@ -65,7 +45,7 @@ export default function Hero() {
     });
   }, [showContent]);
 
-  // ─── Scroll-exit parallax (content fades as you scroll away) ─────────────
+  // Content fades and rises as user scrolls away from hero
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) return;
@@ -92,49 +72,25 @@ export default function Hero() {
       ref={sectionRef}
       className="relative h-[100svh] min-h-[600px] w-full overflow-hidden flex items-center justify-center bg-[#0A1628]"
     >
-      {/* ── Background: video with poster fallback ── */}
+      {/* ── Animated WebP background ── */}
       <div className="absolute inset-0 z-0">
-        {/* FIX 2: videoFailed hides the video and uses poster as bg via CSS class */}
         {/*
-          object-position:
-            mobile  → 85% center  (shifts right so the character on the right
-                                   edge of the 16:9 frame stays in view on
-                                   narrow portrait screens ~390-430 px)
-            md+     → center center (full-width desktop shows the whole frame)
+          Animated WebP plays automatically in all modern browsers
+          (Chrome, Safari, Firefox, Edge, Android, iOS Safari 14+).
+          No autoplay restrictions — browsers treat <img> animations
+          like GIFs. object-position: right center keeps the character
+          anchored in view on narrow mobile portrait screens.
         */}
-        <video
-          ref={videoRef}
-          muted
-          playsInline
-          autoPlay
-          loop
-          poster="/hero-poster.jpg"
-          preload="auto"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-            videoFailed ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
-          style={{
-            objectPosition: "right center",
-          }}
-        >
-          {/* WebM/VP9 — smaller, preferred by Chrome, Android, Firefox */}
-          <source src="/2sunshero.webm" type="video/webm" />
-          {/* MP4/H.264 — fallback for iOS Safari which does not support WebM */}
-          <source src="/2sunshero.mp4" type="video/mp4" />
-        </video>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/2sunshero.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "right center" }}
+        />
 
-        {/* FIX 2: static poster fallback when autoplay is blocked */}
-        {videoFailed && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src="/hero-poster.jpg"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "right center" }}
-          />
-        )}
-
+        {/* Dark gradient overlay — lightens top, darkens bottom for text contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/15 via-transparent to-[#0A1628]/80" />
       </div>
 
@@ -143,6 +99,7 @@ export default function Hero() {
         <AnimatePresence>
           {showContent && (
             <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+
               {/* Badge pill */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -151,13 +108,12 @@ export default function Hero() {
                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/20 backdrop-blur-md mb-6"
               >
                 <CheckCircle2 size={16} className="text-[#F59E0B]" />
-                {/* FIX 5: badge text safe on 375 px */}
                 <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#F59E0B] text-center">
                   Your Local Pressure Washing Professionals
                 </span>
               </motion.div>
 
-              {/* FIX 5: text-5xl on mobile → md:text-7xl → lg:text-8xl */}
+              {/* H1 — text-5xl mobile → md:7xl → lg:8xl */}
               <h1
                 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-[1.1] mb-8 uppercase"
                 style={{ perspective: "2000px" }}
@@ -185,7 +141,7 @@ export default function Hero() {
                 ))}
               </h1>
 
-              {/* FIX 5: paragraph centered, max-w keeps it from overflowing on 375 px */}
+              {/* Subtitle */}
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -196,7 +152,7 @@ export default function Hero() {
                 tough stains and the shine to your property.
               </motion.p>
 
-              {/* FIX 3: flex-col on mobile, flex-row on sm+ */}
+              {/* CTAs — stacked on mobile, side-by-side on sm+ */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -230,6 +186,7 @@ export default function Hero() {
                   </span>
                 </a>
               </motion.div>
+
             </div>
           )}
         </AnimatePresence>
@@ -254,6 +211,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
+      {/* Bottom fade into next section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A1628] to-transparent z-[1]" />
     </section>
   );
