@@ -23,7 +23,7 @@ export default function ServiceArea() {
               <span className="text-sm font-black uppercase tracking-[0.3em] text-[#5AC83A] mb-4 block">
                 Our Service Area
               </span>
-              <h2 className="text-[clamp(1.5rem,4.5vw,3.5rem)] font-black tracking-tighter leading-none whitespace-nowrap bg-clip-text text-transparent bg-gradient-to-r from-[#5AC83A] to-[#56AAE2]">
+              <h2 className="text-[clamp(1.5rem,5vw,3.5rem)] font-black tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#5AC83A] to-[#56AAE2]">
                 Proudly Serving the Inland Empire
               </h2>
               <div className="w-24 h-1.5 mt-6 rounded-full bg-gradient-to-r from-[#5AC83A] to-transparent" />
@@ -56,7 +56,7 @@ export default function ServiceArea() {
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 w-full aspect-square lg:aspect-auto lg:h-[600px] rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] relative group"
+            className="flex-1 w-full aspect-video sm:aspect-square lg:aspect-auto lg:h-[600px] rounded-[2rem] lg:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-[#0A1628]/40 via-transparent to-transparent z-10 pointer-events-none" />
             <iframe
