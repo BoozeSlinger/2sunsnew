@@ -75,7 +75,7 @@ export default function Hero() {
       {/* ── Animated WebP background ── */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/2sunshero.webp"
+          src="/newhero.webp"
           alt="Two Suns Hero"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
