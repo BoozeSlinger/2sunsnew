@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Phone, ArrowRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -74,19 +75,13 @@ export default function Hero() {
     >
       {/* ── Animated WebP background ── */}
       <div className="absolute inset-0 z-0">
-        {/*
-          object-cover fills the full screen on all viewports (no letterbox bars).
-          Mobile: object-position 65% center frames the viewport between the
-          logo (center of frame) and the character (far right) — best visible
-          compromise on narrow portrait screens.
-          Desktop: centered, full-bleed.
-        */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/2sunshero.webp"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover [object-position:65%_center] md:[object-position:center_center]"
+          alt="Two Suns Hero"
+          fill
+          unoptimized // REQUIRED for animated WebP — Next.js optimization breaks animation
+          priority
+          className="object-cover object-center"
         />
 
         {/* Dark gradient overlay — lightens top, darkens bottom for text contrast */}
