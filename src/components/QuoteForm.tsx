@@ -107,7 +107,7 @@ export default function QuoteForm() {
                       id="phone"
                       {...register("phone", { required: "Phone is required" })}
                       className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#5AC83A] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
-                      placeholder="(951) 555-0123"
+                      placeholder="(951) 313-0942"
                     />
                     {errors.phone && (
                       <span role="alert" className="text-xs text-red-400 font-medium flex items-center gap-1 mt-1">

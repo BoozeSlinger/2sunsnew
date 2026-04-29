@@ -164,7 +164,7 @@ export default function Hero() {
                 </Link>
 
                 <a
-                  href="tel:+19515550123"
+                  href="tel:+19513130942"
                   className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full font-bold border border-white/10 backdrop-blur-md transition-all group"
                 >
                   <span className="flex items-center justify-center gap-2">
@@ -172,7 +172,7 @@ export default function Hero() {
                       size={20}
                       className="text-[#5AC83A] group-hover:scale-110 transition-transform"
                     />{" "}
-                    (951) 555-0123
+                    (951) 313-0942
                   </span>
                 </a>
               </motion.div>
