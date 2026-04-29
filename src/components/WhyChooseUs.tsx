@@ -52,17 +52,25 @@ export default function WhyChooseUs() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      ScrollTrigger.batch(".highlight-card", {
-        onEnter: (elements) => {
-          gsap.from(elements, {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "back.out(1.7)",
-          });
-        },
-        start: "top 85%",
+      const cards = gsap.utils.toArray<HTMLElement>(".highlight-card");
+
+      cards.forEach((card, i) => {
+        gsap.fromTo(
+          card,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.9,
+            delay: i * 0.12,
+            ease: "back.out(1.4)",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 88%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
       });
     }, sectionRef);
 

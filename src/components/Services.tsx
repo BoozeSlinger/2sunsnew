@@ -93,11 +93,11 @@ export default function Services() {
           dark
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="service-card group relative overflow-hidden rounded-[2.5rem] h-[450px] cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#5AC83A]/30"
+              className="service-card group relative overflow-hidden rounded-[2rem] aspect-[3/4] cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#5AC83A]/30"
             >
               {/* BEFORE */}
               <img
