@@ -77,7 +77,7 @@ export default function Hero() {
         <img
           src="/2sunshero.webp"
           alt="Two Suns Hero"
-          className="absolute inset-0 w-full h-full object-cover scale-75 object-center"
+          className="absolute inset-0 w-full h-full object-cover scale-90 object-center"
         />
 
         {/* Dark gradient overlay — lightens top, darkens bottom for text contrast */}
