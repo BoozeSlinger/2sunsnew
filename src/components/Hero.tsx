@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Phone, ArrowRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -75,13 +74,10 @@ export default function Hero() {
     >
       {/* ── Animated WebP background ── */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src="/2sunshero.webp"
           alt="Two Suns Hero"
-          fill
-          unoptimized // REQUIRED for animated WebP — Next.js optimization breaks animation
-          priority
-          className="object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
         {/* Dark gradient overlay — lightens top, darkens bottom for text contrast */}
