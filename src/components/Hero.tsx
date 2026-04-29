@@ -75,16 +75,18 @@ export default function Hero() {
       {/* ── Animated WebP background ── */}
       <div className="absolute inset-0 z-0">
         {/*
-          Mobile  → object-contain: full 16:9 image fits in viewport, character
-                    and logo both visible. Dark bg-[#0A1628] fills letterbox bars.
-          Desktop → object-cover: full-bleed, image fills viewport width.
+          object-cover fills the full screen on all viewports (no letterbox bars).
+          Mobile: object-position 65% center frames the viewport between the
+          logo (center of frame) and the character (far right) — best visible
+          compromise on narrow portrait screens.
+          Desktop: centered, full-bleed.
         */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/2sunshero.webp"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover [object-position:65%_center] md:[object-position:center_center]"
         />
 
         {/* Dark gradient overlay — lightens top, darkens bottom for text contrast */}
