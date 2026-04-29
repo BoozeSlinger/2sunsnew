@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #0A1628;
+  --color-foreground: #FFFFFF;
+  --color-primary: #F59E0B;
+  --color-accent: #F59E0B;
+  
+  --font-inter: var(--font-inter);
+  --font-montserrat: var(--font-montserrat);
+  --font-bebas: var(--font-bebas);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0A1628;
+  --foreground: #FFFFFF;
+  --primary: #F59E0B;
+  --accent: #F59E0B;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-bebas), var(--font-montserrat), sans-serif;
+  font-weight: 400;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    outline: none !important;
+    @apply ring-2 ring-[#F59E0B] ring-offset-2 ring-offset-[#0A1628];
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-[#F59E0B] text-[#0A1628] px-8 py-3 rounded-xl font-bold transition-all duration-300 hover:bg-amber-500 hover:scale-105 active:scale-95;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-white text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 hover:bg-white/10 hover:scale-105 active:scale-95;
+  }
+
+  .btn-gold {
+    @apply bg-[#F59E0B] text-[#0A1628] px-6 py-2 rounded-xl font-bold transition-all duration-300 hover:bg-amber-600 hover:scale-105 active:scale-95;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F59E0B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D97706;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Scroll-triggered reveal initial state */
+.will-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
