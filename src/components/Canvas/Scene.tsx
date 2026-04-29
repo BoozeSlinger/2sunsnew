@@ -17,7 +17,7 @@ export default function Scene() {
         
         {/* Lights */}
         <pointLight position={[-5, 5, 5]} intensity={50} color="#2563EB" />
-        <pointLight position={[5, -5, 5]} intensity={30} color="#F59E0B" />
+        <pointLight position={[5, -5, 5]} intensity={30} color="#5AC83A" />
         
         {/* Post-processing */}
         <EffectComposer>

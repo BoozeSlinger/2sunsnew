@@ -77,7 +77,7 @@ export default function Services() {
   return (
     <section ref={sectionRef} id="services" className="py-24 bg-[#0A1628] text-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.05)_0%,transparent_50%)] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(90,200,58,0.05)_0%,transparent_50%)] pointer-events-none" />
       
       <div className="container relative z-10">
         <SectionHeader
@@ -90,7 +90,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="service-card group relative overflow-hidden rounded-[2.5rem] h-[450px] cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#F59E0B]/30"
+              className="service-card group relative overflow-hidden rounded-[2.5rem] h-[450px] cursor-pointer border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#5AC83A]/30"
             >
               {/* BEFORE */}
               <img
@@ -111,13 +111,13 @@ export default function Services() {
               
               <div className="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-[10px] font-black text-[#F59E0B] uppercase tracking-[0.3em] bg-[#F59E0B]/10 px-3 py-1 rounded-full border border-[#F59E0B]/20">
+                  <span className="text-[10px] font-black text-[#5AC83A] uppercase tracking-[0.3em] bg-[#5AC83A]/10 px-3 py-1 rounded-full border border-[#5AC83A]/20">
                     Service {service.index}
                   </span>
-                  <div className="h-px flex-1 bg-gradient-to-r from-[#F59E0B]/30 to-transparent" />
+                  <div className="h-px flex-1 bg-gradient-to-r from-[#5AC83A]/30 to-transparent" />
                 </div>
                 
-                <h3 className="text-white text-3xl font-black tracking-tighter mb-2 group-hover:text-[#F59E0B] transition-colors">
+                <h3 className="text-white text-3xl font-black tracking-tighter mb-2 group-hover:text-[#5AC83A] transition-colors">
                   {service.title}
                 </h3>
                 
@@ -128,15 +128,15 @@ export default function Services() {
                 <div className="mt-6 flex items-center gap-2 text-white/40 text-[10px] font-black uppercase tracking-widest">
                   <span>Before</span>
                   <div className="w-8 h-px bg-white/20" />
-                  <span className="text-[#F59E0B]">Hover to see after</span>
+                  <span className="text-[#5AC83A]">Hover to see after</span>
                 </div>
               </div>
 
               {/* Interactive Pulse Dot */}
               <div className="absolute top-8 right-8 z-20">
                 <div className="relative">
-                  <div className="w-3 h-3 bg-[#F59E0B] rounded-full animate-ping absolute inset-0" />
-                  <div className="w-3 h-3 bg-[#F59E0B] rounded-full relative" />
+                  <div className="w-3 h-3 bg-[#5AC83A] rounded-full animate-ping absolute inset-0" />
+                  <div className="w-3 h-3 bg-[#5AC83A] rounded-full relative" />
                 </div>
               </div>
             </div>

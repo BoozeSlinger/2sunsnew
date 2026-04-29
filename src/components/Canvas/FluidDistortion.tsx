@@ -10,7 +10,7 @@ const FluidMaterial = shaderMaterial(
     uTime: 0,
     uColor: new THREE.Color("#0A1628"),
     uLightColor1: new THREE.Color("#2563EB"), // Blue
-    uLightColor2: new THREE.Color("#F59E0B"), // Gold
+    uLightColor2: new THREE.Color("#5AC83A"), // Gold
     uResolution: new THREE.Vector2(),
   },
   // Vertex Shader

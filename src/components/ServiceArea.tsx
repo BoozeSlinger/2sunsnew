@@ -13,20 +13,20 @@ export default function ServiceArea() {
   return (
     <section className="py-24 bg-[#0A1628] text-white relative overflow-hidden">
       {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#F59E0B]/10 to-transparent pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#F59E0B]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#5AC83A]/10 to-transparent pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#5AC83A]/5 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="container relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="flex-1 w-full">
             <div className="mb-4">
-              <span className="text-sm font-black uppercase tracking-[0.3em] text-[#F59E0B] mb-4 block">
+              <span className="text-sm font-black uppercase tracking-[0.3em] text-[#5AC83A] mb-4 block">
                 Our Service Area
               </span>
-              <h2 className="text-[clamp(1.5rem,4.5vw,3.5rem)] font-black tracking-tighter leading-none whitespace-nowrap bg-clip-text text-transparent bg-gradient-to-r from-[#F59E0B] to-[#FCD34D]">
+              <h2 className="text-[clamp(1.5rem,4.5vw,3.5rem)] font-black tracking-tighter leading-none whitespace-nowrap bg-clip-text text-transparent bg-gradient-to-r from-[#5AC83A] to-[#56AAE2]">
                 Proudly Serving the Inland Empire
               </h2>
-              <div className="w-24 h-1.5 mt-6 rounded-full bg-gradient-to-r from-[#F59E0B] to-transparent" />
+              <div className="w-24 h-1.5 mt-6 rounded-full bg-gradient-to-r from-[#5AC83A] to-transparent" />
             </div>
             
             <p className="text-lg text-white/60 mb-12 leading-relaxed max-w-2xl font-medium">
@@ -43,10 +43,10 @@ export default function ServiceArea() {
                   transition={{ delay: index * 0.05 }}
                   className="flex items-center gap-4 text-lg font-bold group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#F59E0B] group-hover:bg-[#F59E0B] group-hover:text-[#0A1628] group-hover:scale-110 transition-all duration-300 shadow-xl group-hover:shadow-[#F59E0B]/20">
+                  <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#5AC83A] group-hover:bg-[#5AC83A] group-hover:text-[#0A1628] group-hover:scale-110 transition-all duration-300 shadow-xl group-hover:shadow-[#5AC83A]/20">
                     <MapPin size={22} strokeWidth={2.5} />
                   </div>
-                  <span className="group-hover:text-[#F59E0B] transition-colors tracking-tight">{city}</span>
+                  <span className="group-hover:text-[#5AC83A] transition-colors tracking-tight">{city}</span>
                 </motion.div>
               ))}
             </div>
@@ -73,7 +73,7 @@ export default function ServiceArea() {
             {/* Map Decoration */}
             <div className="absolute top-6 right-6 z-20">
               <div className="px-6 py-3 rounded-2xl bg-[#0A1628]/80 backdrop-blur-xl border border-white/10 shadow-2xl">
-                <p className="text-[#F59E0B] font-black text-sm uppercase tracking-widest">Live Map View</p>
+                <p className="text-[#5AC83A] font-black text-sm uppercase tracking-widest">Live Map View</p>
               </div>
             </div>
           </motion.div>

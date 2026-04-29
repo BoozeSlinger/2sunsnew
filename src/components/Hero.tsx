@@ -95,10 +95,10 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/20 backdrop-blur-md mb-6"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#5AC83A]/10 border border-[#5AC83A]/20 backdrop-blur-md mb-6"
               >
-                <CheckCircle2 size={16} className="text-[#F59E0B]" />
-                <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#F59E0B] text-center">
+                <CheckCircle2 size={16} className="text-[#5AC83A]" />
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#5AC83A] text-center">
                   Your Local Pressure Washing Professionals
                 </span>
               </motion.div>
@@ -116,7 +116,7 @@ export default function Hero() {
                     }}
                     className={`block ${
                       i === 2
-                        ? "bg-clip-text text-transparent bg-gradient-to-r from-[#F59E0B] to-[#FCD34D]"
+                        ? "bg-clip-text text-transparent bg-gradient-to-r from-[#5AC83A] to-[#56AAE2]"
                         : ""
                     }`}
                     style={{
@@ -151,7 +151,7 @@ export default function Hero() {
               >
                 <Link
                   href="#contact"
-                  className="group relative w-full sm:w-auto px-8 py-4 bg-[#F59E0B] text-[#0A1628] rounded-full font-black uppercase tracking-widest text-xs overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#F59E0B]/25"
+                  className="group relative w-full sm:w-auto px-8 py-4 bg-[#5AC83A] text-white rounded-full font-black uppercase tracking-widest text-xs overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#5AC83A]/25"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     Get Your Free Quote{" "}
@@ -160,7 +160,7 @@ export default function Hero() {
                       className="group-hover:translate-x-1 transition-transform"
                     />
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#FCD34D] to-[#F59E0B] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#56AAE2] to-[#5AC83A] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
 
                 <a
@@ -170,7 +170,7 @@ export default function Hero() {
                   <span className="flex items-center justify-center gap-2">
                     <Phone
                       size={20}
-                      className="text-[#F59E0B] group-hover:scale-110 transition-transform"
+                      className="text-[#5AC83A] group-hover:scale-110 transition-transform"
                     />{" "}
                     (951) 555-0123
                   </span>
@@ -196,7 +196,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="w-1.5 h-1.5 bg-[#F59E0B] rounded-full"
+            className="w-1.5 h-1.5 bg-[#5AC83A] rounded-full"
           />
         </div>
       </motion.div>

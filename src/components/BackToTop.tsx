@@ -31,10 +31,10 @@ export default function BackToTop() {
           className="
             fixed bottom-8 right-6 z-50
             w-12 h-12 rounded-full
-            bg-[#F59E0B] text-[#0A1628]
+            bg-[#5AC83A] text-white
             flex items-center justify-center
-            shadow-[0_0_20px_rgba(245,158,11,0.5)]
-            hover:scale-110 hover:shadow-[0_0_30px_rgba(245,158,11,0.7)]
+            shadow-[0_0_20px_rgba(90,200,58,0.5)]
+            hover:scale-110 hover:shadow-[0_0_30px_rgba(90,200,58,0.7)]
             active:scale-95
             transition-all duration-300
           "

@@ -62,11 +62,11 @@ export default function Gallery() {
               <div className="relative mb-8">
                 {/* Status Badge */}
                 <div className="absolute top-6 left-6 z-20 flex gap-2">
-                  <span className="px-5 py-2 rounded-2xl bg-[#0A1628]/80 backdrop-blur-xl text-[10px] font-black uppercase tracking-[0.2em] text-[#F59E0B] border border-white/10 shadow-2xl">
+                  <span className="px-5 py-2 rounded-2xl bg-[#0A1628]/80 backdrop-blur-xl text-[10px] font-black uppercase tracking-[0.2em] text-[#5AC83A] border border-white/10 shadow-2xl">
                     {item.category}
                   </span>
                   {item.featured && (
-                    <span className="px-5 py-2 rounded-2xl bg-[#F59E0B] text-[10px] font-black uppercase tracking-[0.2em] text-[#0A1628] shadow-2xl">
+                    <span className="px-5 py-2 rounded-2xl bg-[#5AC83A] text-[10px] font-black uppercase tracking-[0.2em] text-[#0A1628] shadow-2xl">
                       Featured
                     </span>
                   )}
@@ -89,7 +89,7 @@ export default function Gallery() {
                         <p className="text-white/40 text-[10px] font-black uppercase tracking-widest mb-1">Time to Complete</p>
                         <p className="text-white text-lg font-black tracking-tight">{item.time}</p>
                       </div>
-                      <div className="w-12 h-12 rounded-2xl bg-[#F59E0B] flex items-center justify-center text-[#0A1628]">
+                      <div className="w-12 h-12 rounded-2xl bg-[#5AC83A] flex items-center justify-center text-[#0A1628]">
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
@@ -104,10 +104,10 @@ export default function Gallery() {
 
               <div className="px-4">
                 <div className="flex items-center gap-4 mb-3">
-                  <div className="h-px flex-1 bg-gradient-to-r from-[#F59E0B]/50 to-transparent" />
-                  <span className="text-[#F59E0B] font-black text-xs uppercase tracking-[0.3em]">Project {index + 1}</span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-[#5AC83A]/50 to-transparent" />
+                  <span className="text-[#5AC83A] font-black text-xs uppercase tracking-[0.3em]">Project {index + 1}</span>
                 </div>
-                <h3 className="text-3xl font-black tracking-tighter mb-2 group-hover:text-[#F59E0B] transition-colors duration-500">
+                <h3 className="text-3xl font-black tracking-tighter mb-2 group-hover:text-[#5AC83A] transition-colors duration-500">
                   {item.title}
                 </h3>
                 <p className="text-white/40 text-sm font-medium tracking-wide">
@@ -120,8 +120,8 @@ export default function Gallery() {
       </div>
       
       {/* Dynamic Background Elements */}
-      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-[#F59E0B]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -left-24 w-96 h-96 bg-[#F59E0B]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-[#5AC83A]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-24 w-96 h-96 bg-[#5AC83A]/5 rounded-full blur-[120px] pointer-events-none" />
     </section>
   );
 }

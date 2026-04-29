@@ -23,14 +23,14 @@ export default function Footer() {
           <div className="flex gap-4">
             <Link 
               href="#" 
-              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#F59E0B] transition-all duration-300 ease-in-out"
+              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#5AC83A] transition-all duration-300 ease-in-out"
               aria-label="Visit our Facebook page"
             >
               <Share2 size={20} />
             </Link>
             <Link 
               href="#" 
-              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#F59E0B] transition-all duration-300 ease-in-out"
+              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#5AC83A] transition-all duration-300 ease-in-out"
               aria-label="Visit our Instagram page"
             >
               <Share2 size={20} />
@@ -68,15 +68,15 @@ export default function Footer() {
           <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
           <ul className="flex flex-col gap-4 text-white/60">
             <li className="flex gap-3">
-              <Phone className="text-[#F59E0B] shrink-0" size={20} />
+              <Phone className="text-[#5AC83A] shrink-0" size={20} />
               <span>(951) 555-0123</span>
             </li>
             <li className="flex gap-3">
-              <Mail className="text-[#F59E0B] shrink-0" size={20} />
+              <Mail className="text-[#5AC83A] shrink-0" size={20} />
               <span>quotes@twosuns.com</span>
             </li>
             <li className="flex gap-3">
-              <MapPin className="text-[#F59E0B] shrink-0" size={20} />
+              <MapPin className="text-[#5AC83A] shrink-0" size={20} />
               <span>Riverside, CA 92501</span>
             </li>
           </ul>

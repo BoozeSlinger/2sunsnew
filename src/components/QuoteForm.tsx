@@ -59,13 +59,13 @@ export default function QuoteForm() {
         />
         <div 
           ref={formCardRef}
-          className="bg-white/5 backdrop-blur-xl rounded-[2rem] shadow-[0_0_40px_rgba(245,158,11,0.15)] overflow-hidden border border-white/10 flex flex-col md:flex-row mt-12"
+          className="bg-white/5 backdrop-blur-xl rounded-[2rem] shadow-[0_0_40px_rgba(90,200,58,0.15)] overflow-hidden border border-white/10 flex flex-col md:flex-row mt-12"
         >
-          <div className="bg-gradient-to-br from-[#F59E0B] to-[#D97706] p-12 text-[#0A1628] md:w-2/5 flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#072649] to-[#5AC83A] p-12 text-white md:w-2/5 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
             <div className="relative z-10">
               <h2 className="text-3xl lg:text-4xl font-black mb-6 tracking-tight">Get Your Free Quote</h2>
-              <p className="text-[#0A1628]/80 mb-8 leading-relaxed text-lg font-medium">
+              <p className="text-white/80 mb-8 leading-relaxed text-lg font-medium">
                 Fill out the form and our team will get back to you with a detailed, no-obligation estimate within 24 hours.
               </p>
             </div>
@@ -91,7 +91,7 @@ export default function QuoteForm() {
                     <input
                       id="fullName"
                       {...register("fullName", { required: "Name is required" })}
-                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#F59E0B] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
+                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#5AC83A] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
                       placeholder="John Doe"
                     />
                     {errors.fullName && (
@@ -106,7 +106,7 @@ export default function QuoteForm() {
                     <input
                       id="phone"
                       {...register("phone", { required: "Phone is required" })}
-                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#F59E0B] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
+                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#5AC83A] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
                       placeholder="(951) 555-0123"
                     />
                     {errors.phone && (
@@ -124,7 +124,7 @@ export default function QuoteForm() {
                         required: "Email is required",
                         pattern: { value: /^\S+@\S+$/i, message: "Invalid email" }
                       })}
-                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#F59E0B] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
+                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#5AC83A] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
                       placeholder="john@example.com"
                     />
                     {errors.email && (
@@ -140,7 +140,7 @@ export default function QuoteForm() {
                       <select
                         id="serviceType"
                         {...register("serviceType", { required: "Please select a service" })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#F59E0B] focus:bg-white/10 text-white transition-all duration-300 shadow-inner appearance-none"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#5AC83A] focus:bg-white/10 text-white transition-all duration-300 shadow-inner appearance-none"
                       >
                         <option value="" className="bg-[#0A1628] text-white">Select a service...</option>
                         <option value="house" className="bg-[#0A1628] text-white">House Washing</option>
@@ -166,7 +166,7 @@ export default function QuoteForm() {
                     <input
                       id="address"
                       {...register("address", { required: "Address is required" })}
-                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#F59E0B] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
+                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#5AC83A] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner"
                       placeholder="123 Wash St, Riverside, CA"
                     />
                     {errors.address && (
@@ -182,14 +182,14 @@ export default function QuoteForm() {
                       id="message"
                       {...register("message")}
                       rows={4}
-                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#F59E0B] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner resize-none"
+                      className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-[#5AC83A] focus:bg-white/10 text-white placeholder-white/30 transition-all duration-300 shadow-inner resize-none"
                       placeholder="Tell us more about your project..."
                     />
                   </div>
 
                   <button
                     disabled={isSubmitting}
-                    className="md:col-span-2 bg-[#F59E0B] text-white hover:bg-amber-500 rounded-xl font-bold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-[0_0_20px_rgba(245,158,11,0.3)] flex items-center justify-center gap-2 disabled:opacity-70 mt-4 h-14"
+                    className="md:col-span-2 bg-[#5AC83A] text-white hover:bg-[#3A9E28] rounded-xl font-bold transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-[0_0_20px_rgba(90,200,58,0.3)] flex items-center justify-center gap-2 disabled:opacity-70 mt-4 h-14"
                   >
                     {isSubmitting ? (
                       <>
@@ -221,7 +221,7 @@ export default function QuoteForm() {
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-8 text-[#F59E0B] font-bold hover:text-[#FCD34D] transition-colors"
+                    className="mt-8 text-[#5AC83A] font-bold hover:text-[#56AAE2] transition-colors"
                   >
                     Send another request
                   </button>

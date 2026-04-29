@@ -13,37 +13,37 @@ const highlights = [
     title: "Fast Response Times",
     body: "We understand your time is valuable. Expect a quote and schedule date within 24 hours.",
     icon: Zap,
-    accent: "from-[#F59E0B] to-[#FCD34D]",
-    glow: "group-hover:shadow-[#F59E0B]/20",
-    iconColor: "text-[#F59E0B]",
-    bgAccent: "bg-[#F59E0B]/10",
+    accent: "from-[#5AC83A] to-[#56AAE2]",
+    glow: "group-hover:shadow-[#5AC83A]/20",
+    iconColor: "text-[#5AC83A]",
+    bgAccent: "bg-[#5AC83A]/10",
   },
   {
     title: "Eco-Friendly Products",
     body: "We use biodegradable, pet-safe, and plant-safe detergents for all our soft washing.",
     icon: Leaf,
-    accent: "from-[#F59E0B] to-[#FCD34D]",
-    glow: "group-hover:shadow-[#F59E0B]/20",
-    iconColor: "text-[#F59E0B]",
-    bgAccent: "bg-[#F59E0B]/10",
+    accent: "from-[#5AC83A] to-[#56AAE2]",
+    glow: "group-hover:shadow-[#5AC83A]/20",
+    iconColor: "text-[#5AC83A]",
+    bgAccent: "bg-[#5AC83A]/10",
   },
   {
     title: "Satisfaction Guaranteed",
     body: "If you aren't 100% happy with the result, we'll make it right. No questions asked.",
     icon: ShieldCheck,
-    accent: "from-[#F59E0B] to-[#FCD34D]",
-    glow: "group-hover:shadow-[#F59E0B]/20",
-    iconColor: "text-[#F59E0B]",
-    bgAccent: "bg-[#F59E0B]/10",
+    accent: "from-[#5AC83A] to-[#56AAE2]",
+    glow: "group-hover:shadow-[#5AC83A]/20",
+    iconColor: "text-[#5AC83A]",
+    bgAccent: "bg-[#5AC83A]/10",
   },
   {
     title: "Free Detailed Estimates",
     body: "No hidden fees. Every quote includes a complete breakdown of services and costs.",
     icon: FileText,
-    accent: "from-[#F59E0B] to-[#FCD34D]",
-    glow: "group-hover:shadow-[#F59E0B]/20",
-    iconColor: "text-[#F59E0B]",
-    bgAccent: "bg-[#F59E0B]/10",
+    accent: "from-[#5AC83A] to-[#56AAE2]",
+    glow: "group-hover:shadow-[#5AC83A]/20",
+    iconColor: "text-[#5AC83A]",
+    bgAccent: "bg-[#5AC83A]/10",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
   return (
     <section ref={sectionRef} id="why-us" className="py-24 bg-[#0A1628] text-white relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[#F59E0B]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[#5AC83A]/5 rounded-full blur-[150px] pointer-events-none" />
       
       <div className="container relative z-10">
         <SectionHeader 
@@ -93,8 +93,8 @@ export default function WhyChooseUs() {
               {/* Icon Container with Circular Gradient Background */}
               <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-10 relative group-hover:scale-110 transition-transform duration-500`}>
                 <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${item.accent} opacity-10 group-hover:opacity-20 blur-md transition-opacity duration-500`} />
-                <div className={`absolute inset-0 rounded-full border border-white/5 group-hover:border-[#F59E0B]/30 transition-colors duration-500`} />
-                <item.icon className={`w-10 h-10 ${item.iconColor} relative z-10 drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]`} />
+                <div className={`absolute inset-0 rounded-full border border-white/5 group-hover:border-[#5AC83A]/30 transition-colors duration-500`} />
+                <item.icon className={`w-10 h-10 ${item.iconColor} relative z-10 drop-shadow-[0_0_15px_rgba(90,200,58,0.5)]`} />
               </div>
               
               <h4 className="text-2xl font-black mb-4 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-500">

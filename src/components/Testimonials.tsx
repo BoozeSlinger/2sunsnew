@@ -60,7 +60,7 @@ export default function Testimonials() {
       className="py-24 bg-[#0A1628] text-white relative overflow-hidden"
     >
       {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#F59E0B]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#5AC83A]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container relative z-10">
         <SectionHeader
@@ -76,7 +76,7 @@ export default function Testimonials() {
               <Star
                 key={i}
                 size={28}
-                className="fill-[#F59E0B] text-[#F59E0B] drop-shadow-[0_0_8px_rgba(245,158,11,0.6)]"
+                className="fill-[#5AC83A] text-[#5AC83A] drop-shadow-[0_0_8px_rgba(90,200,58,0.6)]"
               />
             ))}
           </div>
@@ -96,10 +96,10 @@ export default function Testimonials() {
               key={review.name}
               className="testimonial-card w-[82vw] flex-shrink-0 snap-center md:w-auto md:flex-shrink
                 bg-white/[0.04] backdrop-blur-xl p-8 rounded-[2rem]
-                border border-white/10 hover:border-[#F59E0B]/30
+                border border-white/10 hover:border-[#5AC83A]/30
                 flex flex-col justify-between
                 shadow-[0_4px_30px_rgba(0,0,0,0.3)]
-                hover:shadow-[0_8px_40px_rgba(245,158,11,0.12)]
+                hover:shadow-[0_8px_40px_rgba(90,200,58,0.12)]
                 transition-all duration-500 hover:-translate-y-2
                 group
               "
@@ -107,12 +107,12 @@ export default function Testimonials() {
               {/* Large quote icon */}
               <Quote
                 size={40}
-                className="text-[#F59E0B]/20 mb-4 group-hover:text-[#F59E0B]/40 transition-colors duration-500"
+                className="text-[#5AC83A]/20 mb-4 group-hover:text-[#5AC83A]/40 transition-colors duration-500"
               />
 
               <div className="flex gap-1 mb-5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-[#F59E0B] text-[#F59E0B]" />
+                  <Star key={i} size={16} className="fill-[#5AC83A] text-[#5AC83A]" />
                 ))}
               </div>
 
@@ -121,12 +121,12 @@ export default function Testimonials() {
               </p>
 
               <div className="flex items-center gap-4 border-t border-white/[0.08] pt-6">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#F59E0B] to-[#FCD34D] flex items-center justify-center text-[#0A1628] font-black text-lg shadow-[0_0_15px_rgba(245,158,11,0.35)] flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#5AC83A] to-[#56AAE2] flex items-center justify-center text-white font-black text-lg shadow-[0_0_15px_rgba(90,200,58,0.35)] flex-shrink-0">
                   {review.name[0]}
                 </div>
                 <div>
                   <h5 className="font-bold text-base text-white">{review.name}</h5>
-                  <p className="text-sm text-[#F59E0B] font-medium mt-0.5">{review.city}</p>
+                  <p className="text-sm text-[#5AC83A] font-medium mt-0.5">{review.city}</p>
                 </div>
               </div>
             </div>
