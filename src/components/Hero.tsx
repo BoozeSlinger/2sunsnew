@@ -117,6 +117,9 @@ export default function Hero() {
             objectPosition: "85% center",
           }}
         >
+          {/* WebM/VP9 — smaller, preferred by Chrome, Android, Firefox */}
+          <source src="/2sunshero.webm" type="video/webm" />
+          {/* MP4/H.264 — fallback for iOS Safari which does not support WebM */}
           <source src="/2sunshero.mp4" type="video/mp4" />
         </video>
 
